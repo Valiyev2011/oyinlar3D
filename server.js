@@ -5,7 +5,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const PORT = process.env.PORT || 3000;
-const PUBLIC = path.join(__dirname, 'public');
+const PUBLIC = __dirname;
 const WIN_SCORE = 12;      // nechta ochkoga o'ynaladi
 const ROUND_MS = 15000;    // bir raund vaqti
 const REVEAL_MS = 3000;    // natija ko'rsatilish vaqti
