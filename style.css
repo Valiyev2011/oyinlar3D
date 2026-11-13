@@ -1,0 +1,71 @@
+:root {
+  --bg1: #1b1033; --bg2: #3a1550; --card: rgba(255,255,255,.08); --line: rgba(255,255,255,.16);
+  --text: #fff; --muted: #c9b8e6; --accent: #ff4d8d; --accent2: #ffb86b; --good: #4ade80; --bad: #f87171;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 20% -10%, #5b1f6e 0%, transparent 60%), linear-gradient(160deg, var(--bg1), var(--bg2));
+  background-attachment: fixed;
+}
+main { max-width: 460px; margin: 0 auto; padding: 16px 16px 40px; }
+header { text-align: center; margin: 8px 0 14px; }
+h1 { font-size: 24px; margin: 0; }
+.sub { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-bottom: 12px; backdrop-filter: blur(6px); }
+.hidden { display: none !important; }
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+input, textarea {
+  width: 100%; margin-top: 6px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(0,0,0,.25); color: var(--text); font-size: 16px; font-family: inherit;
+}
+textarea { resize: vertical; min-height: 56px; }
+input:focus, textarea:focus { outline: 2px solid var(--accent); }
+button {
+  width: 100%; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(255,255,255,.1); color: var(--text); font-size: 16px; font-weight: 600; cursor: pointer;
+}
+button:active { transform: scale(.98); }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: linear-gradient(135deg, var(--accent), #ff7a59); border: 0; }
+.or { text-align: center; color: var(--muted); margin: 10px 0; font-size: 13px; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; }
+.bar b { letter-spacing: 3px; font-size: 18px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #777; margin-right: 5px; }
+.dot.on { background: var(--good); }
+.stack { display: grid; gap: 10px; }
+.center { text-align: center; }
+.muted { color: var(--muted); font-size: 14px; }
+.toast { position: fixed; left: 50%; top: 12px; transform: translateX(-50%); background: #000c; padding: 10px 16px; border-radius: 12px; z-index: 9; max-width: 90%; }
+
+/* Don-don-ziki */
+.scoreboard { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; text-align: center; gap: 8px; }
+.scoreboard .n { font-size: 38px; font-weight: 800; }
+.scoreboard .who { font-size: 13px; color: var(--muted); }
+.timer { text-align: center; font-size: 30px; font-weight: 800; margin: 10px 0; color: var(--accent2); }
+.timer.low { color: var(--bad); }
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.picks button { font-size: 40px; padding: 14px 0; line-height: 1.1; }
+.picks button small { display: block; font-size: 12px; font-weight: 600; margin-top: 4px; }
+.picks button.sel { outline: 3px solid var(--accent); background: rgba(255,77,141,.25); }
+.versus { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; text-align: center; font-size: 56px; margin: 8px 0; }
+.versus .vs { font-size: 16px; color: var(--muted); }
+.result { text-align: center; font-size: 20px; font-weight: 800; margin: 6px 0 12px; }
+.result.win { color: var(--good); } .result.lose { color: var(--bad); }
+
+/* Kataklar */
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+.cell {
+  aspect-ratio: 1; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.1);
+  font-size: 20px; font-weight: 700; padding: 0; display: flex; align-items: center; justify-content: center; position: relative;
+}
+.cell.sel { background: rgba(255,77,141,.35); outline: 2px solid var(--accent); }
+.cell.mine::after { content: "●"; position: absolute; top: 3px; right: 6px; font-size: 10px; color: var(--accent2); }
+.cell.open { background: rgba(255,255,255,.04); cursor: default; }
+.cell.hit { background: rgba(255,184,107,.3); }
+.log { display: grid; gap: 8px; margin-top: 8px; }
+.log .item { background: rgba(0,0,0,.25); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+.log .item b { color: var(--accent2); }
+.field { margin-bottom: 8px; }
