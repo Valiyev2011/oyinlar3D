@@ -1,0 +1,8 @@
+{
+  "name": "ikkimizning-oyinlar",
+  "version": "1.0.0",
+  "description": "Don-don-ziki va 4x4 kataklar - ikki kishilik onlayn o'yin",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
